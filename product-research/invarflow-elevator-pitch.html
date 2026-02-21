@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InvarFlow AI — Elevator Pitch</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink: #0a0a0f;
+    --paper: #f5f2eb;
+    --accent: #e84a1f;
+    --mid: #6b6b78;
+    --line: #d0cdc4;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    overflow-x: hidden;
+  }
+
+  .grain {
+    position: fixed; inset: 0; pointer-events: none; z-index: 100;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.4;
+  }
+
+  .card {
+    max-width: 720px;
+    width: 100%;
+    border: 2px solid var(--ink);
+    position: relative;
+    background: var(--paper);
+    animation: fadeUp 0.8s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .tag-strip {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .tag-strip .timer { color: var(--accent); font-weight: 500; }
+
+  .main {
+    padding: 48px 40px 40px;
+  }
+
+  .product-name {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(42px, 8vw, 72px);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+  }
+
+  .product-name span {
+    color: var(--accent);
+  }
+
+  .tagline {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 40px;
+    padding-left: 3px;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--line);
+    margin-bottom: 36px;
+  }
+
+  .pitch-block {
+    margin-bottom: 28px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 16px;
+    align-items: start;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .pitch-block:nth-child(1) { animation-delay: 0.1s; }
+  .pitch-block:nth-child(2) { animation-delay: 0.2s; }
+  .pitch-block:nth-child(3) { animation-delay: 0.3s; }
+  .pitch-block:nth-child(4) { animation-delay: 0.4s; }
+  .pitch-block:nth-child(5) { animation-delay: 0.5s; }
+
+  .label {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid);
+    padding-top: 4px;
+    border-top: 1px solid var(--line);
+  }
+
+  .content {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+
+  .content strong {
+    font-weight: 500;
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .full-pitch {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 32px;
+    margin: 36px 0 0;
+    position: relative;
+    animation: fadeUp 0.8s 0.6s ease both;
+  }
+
+  .full-pitch::before {
+    content: '"';
+    font-family: 'Syne', sans-serif;
+    font-size: 120px;
+    font-weight: 800;
+    color: var(--accent);
+    position: absolute;
+    top: -20px;
+    left: 24px;
+    line-height: 1;
+    opacity: 0.6;
+  }
+
+  .full-pitch p {
+    font-size: 15px;
+    line-height: 1.75;
+    padding-top: 40px;
+  }
+
+  .bottom-strip {
+    border-top: 2px solid var(--ink);
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  .cta {
+    background: var(--accent);
+    color: white;
+    padding: 4px 14px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .corner-mark {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 28px 28px 0;
+    border-color: transparent var(--accent) transparent transparent;
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="card">
+  <div class="corner-mark"></div>
+  <div class="tag-strip">
+    <span>Elevator Pitch — Software Product</span>
+    <span class="timer">⏱ 45 sec</span>
+  </div>
+
+  <div class="main">
+    <div class="product-name">Invar<span>Flow</span><br>AI</div>
+    <div class="tagline">Spec-driven development · AI-powered · Progress-aware</div>
+    <div class="divider"></div>
+
+    <div class="pitch-block">
+      <div class="label">Hook</div>
+      <div class="content">Most software teams still write specs in one tool, build in another, and track progress in a third — with <strong>no connection between any of them.</strong></div>
+    </div>
+
+    <div class="pitch-block">
+      <div class="label">Problem</div>
+      <div class="content">The result? Misaligned builds, missed requirements, and endless status meetings. Teams lose weeks catching up to specs that evolved without anyone noticing.</div>
+    </div>
+
+    <div class="pitch-block">
+      <div class="label">Solution</div>
+      <div class="content">InvarFlow AI is the <strong>first platform that turns specs into working software</strong> — using the latest AI models to generate, validate, and evolve code directly from your requirements, while tracking every implementation decision against the original spec in real time.</div>
+    </div>
+
+    <div class="pitch-block">
+      <div class="label">Value</div>
+      <div class="content">Teams ship <strong>40% faster</strong> with full traceability between what was designed and what was built — no more guessing what's done, what drifted, or what's next.</div>
+    </div>
+
+    <div class="pitch-block">
+      <div class="label">Ask</div>
+      <div class="content">We're onboarding early design partners right now. <strong>Could we get 20 minutes</strong> to show you how your next sprint could look?</div>
+    </div>
+
+    <div class="full-pitch">
+      <p>Most dev teams are stuck bridging the gap between their specs and their codebase by hand. InvarFlow AI closes that gap — it reads your requirements, generates implementation-ready code using the latest AI models, and tracks every feature's progress against the original spec automatically. You always know what's built, what's drifted, and what's left. We're working with early teams now, and I'd love to show you a demo.</p>
+    </div>
+  </div>
+
+  <div class="bottom-strip">
+    <span>InvarFlow AI · 2025</span>
+    <span class="cta">Request a Demo →</span>
+  </div>
+</div>
+</body>
+</html>
