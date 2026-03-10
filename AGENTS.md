@@ -93,7 +93,6 @@ volumes:
 - Use official base images when possible
 - Pin specific versions for reproducibility
 - Prefer Alpine Linux variants when security is a priority
-- For Node.js applications, use `node:18-alpine` or later
 
 #### Layer Optimization
 
